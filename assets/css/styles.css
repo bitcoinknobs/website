@@ -1,0 +1,108 @@
+/* Basic modern styles for Bitcoin Knobs site */
+:root {
+  --bg: #0e1217;
+  --panel: #141a22;
+  --text: #e5ecf4;
+  --muted: #9bb0c2;
+  --accent: #f59e0b;
+  --green: #22c55e;
+  --shadow: 0 10px 30px rgba(0,0,0,.3);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: radial-gradient(1200px 600px at 80% -10%, #1b2430 0%, var(--bg) 40%) no-repeat, var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(14,18,23,.7);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1f2732;
+}
+
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.nav a { color: var(--muted); text-decoration: none; margin-left: 16px; font-weight: 600; }
+.nav a:hover { color: var(--text); }
+
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 800; }
+.logo { width: 28px; height: 28px; }
+
+.hero {
+  text-align: center;
+  padding: 80px 0 40px;
+}
+.hero h1 { font-size: clamp(40px, 7vw, 72px); margin: 0 0 12px; }
+.tagline { font-size: clamp(16px, 2.4vw, 22px); color: var(--muted); margin: 0 auto 20px; max-width: 800px; }
+.cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+
+.btn {
+  display: inline-block; padding: 12px 18px; border-radius: 14px;
+  border: 1px solid #273042; text-decoration: none; font-weight: 700;
+  box-shadow: var(--shadow);
+}
+.btn.primary { background: linear-gradient(90deg, var(--accent), #ffcc66); color: #1a1200; }
+.btn.ghost { background: transparent; color: var(--text); }
+.btn:hover { transform: translateY(-1px); }
+
+.hero-art {
+  margin: 30px auto 0; width: min(900px, 92vw); height: 220px;
+  background:
+    radial-gradient(circle at 15% 40%, rgba(245,158,11,.2), transparent 40%),
+    radial-gradient(circle at 85% 60%, rgba(34,197,94,.18), transparent 45%),
+    linear-gradient(135deg, #111723 0%, #151c27 100%);
+  border: 1px solid #223047;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+.hero-art::before,
+.hero-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-radial-gradient(circle at 20% 30%, rgba(255,255,255,.07) 0 2px, transparent 2px 6px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,.04) 0 2px, transparent 2px 8px);
+  mix-blend-mode: overlay;
+  opacity: .6;
+}
+
+.section { padding: 30px 0; }
+.section h2 { font-size: 28px; margin: 0 0 10px; }
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; padding-left: 18px; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid #223047;
+  border-radius: 12px;
+  padding: 14px;
+  overflow: auto;
+  box-shadow: var(--shadow);
+}
+
+.site-footer {
+  border-top: 1px solid #1f2732;
+  background: #0b0f14;
+  color: var(--muted);
+  text-align: center;
+  padding: 30px 0 40px;
+}
+
+/* Small tweaks */
+code { background: #0b0f14; border: 1px solid #223047; padding: 2px 6px; border-radius: 8px; }

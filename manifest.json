@@ -1,0 +1,15 @@
+{
+  "name": "Bitcoin Knobs",
+  "short_name": "Knobs",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0e1217",
+  "theme_color": "#0e1217",
+  "icons": [
+    {
+      "src": "assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
